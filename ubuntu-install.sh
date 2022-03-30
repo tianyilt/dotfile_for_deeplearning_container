@@ -15,17 +15,18 @@ apt install -y nodejs npm
 apt-get -y install libgl1-mesa-glx nghttp2 libnghttp2-dev libssl-dev
 
 ## install `oh-my-zsh`
-
-# sh -c "$(wget https://raw.fastgit.org/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+export GIT_SSL_NO_VERIFY=1
+REPO=sjtug/ohmyzsh REMOTE=https://git.sjtu.edu.cn/${REPO}.git sh -c "$(wget -O- https://git.sjtu.edu.cn/sjtug/ohmyzsh/-/raw/master/tools/install.sh\?inline\=false)"
 ./zsh/install.sh
 mv ~/.zshrc ~/.zshrc_old
 cp -f zsh/zshrc-linux.conf ~/.zshrc
 cp -f zsh/changkun.zsh-theme ~/.oh-my-zsh/themes/ -r
 source ~/.zshrc
-git clone --depth=1 https://hub.fastgit.org/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone --depth=1 https://hub.fastgit.xyz/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
 cp zsh/git.zsh ~/.oh-my-zsh/lib/ -f
 source ~/.zshrc
+chsh -s `which zsh`
 
 ## install ssh
 cd ssh
@@ -60,7 +61,7 @@ cd ..
 
 
 # install tmux config
-git clone --depth=1 https://hub.fastgit.org/gpakosz/.tmux.git ~/.tmux
+git clone --depth=1 https://hub.fastgit.xyz/gpakosz/.tmux.git ~/.tmux
 ln -s -f ~/.tmux/.tmux.conf ~/.tmux.conf
 cp -r ~/.tmux/.tmux.conf.local ~/.
 cp -r tmux/tmux.local.conf ~/.tmux.conf.local
