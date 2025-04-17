@@ -22,7 +22,7 @@ mv ~/.zshrc ~/.zshrc_old
 cp -f zsh/zshrc-linux.conf ~/.zshrc
 cp -f zsh/changkun.zsh-theme ~/.oh-my-zsh/themes/ -r
 source ~/.zshrc
-git clone --depth=1 https://hub.fastgit.xyz/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone --depth=1 https://gitee.com/githubClone/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
 cp zsh/git.zsh ~/.oh-my-zsh/lib/ -f
 source ~/.zshrc
